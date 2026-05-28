@@ -17,7 +17,8 @@ namespace FrontendAPI.Controllers
             _httpClient2 = httpClientFactory.CreateClient("BackendAPI2");
         }
 
-        [HttpGet(Name = "GetRandomSum")]
+        [AcceptVerbs("GET", "POST")]
+        [Route("GetRandomSum")]
         public async Task<int> Get()
         {
             _logger.LogInformation("GetRandomSum called - starting async calls to backend APIs");
