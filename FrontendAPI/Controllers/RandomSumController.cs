@@ -18,6 +18,7 @@ namespace FrontendAPI.Controllers
         }
 
         [HttpGet(Name = "GetRandomSum")]
+        [HttpPost(Name = "GetRandomSum")]
         public async Task<int> Get()
         {
             _logger.LogInformation("GetRandomSum called - starting async calls to backend APIs");
