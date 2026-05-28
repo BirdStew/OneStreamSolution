@@ -1,0 +1,6 @@
+@BackendAPI2_HostAddress = http://localhost:5007
+
+GET {{BackendAPI2_HostAddress}}/randomnumber/
+Accept: application/json
+
+###
