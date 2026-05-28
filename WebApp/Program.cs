@@ -6,6 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+// Add HttpClient for FrontendAPI
+builder.Services.AddHttpClient("FrontendAPI", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7240"); 
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

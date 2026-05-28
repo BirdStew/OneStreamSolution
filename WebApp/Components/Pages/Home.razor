@@ -1,5 +1,6 @@
-﻿@page "/counter"
+﻿@page "/"
 @rendermode InteractiveServer
+@inject IHttpClientFactory HttpClientFactory
 
 <PageTitle>Make an API Call</PageTitle>
 
@@ -20,8 +21,9 @@
 
     //Make a call to FrontendAPI, which will call will call two BackendAPIs
     //and return the sum of two random numbers
-    private void MakeAPICall()
+    private async Task MakeAPICall()
     {
-
+        HttpClient httpClient = HttpClientFactory.CreateClient("FrontendAPI");
+        apiResult = await httpClient.GetFromJsonAsync<int>("/RandomSum");
     }
 }

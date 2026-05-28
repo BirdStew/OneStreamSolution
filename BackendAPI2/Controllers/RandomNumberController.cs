@@ -14,9 +14,12 @@ namespace BackendAPI1.Controllers
         }
 
         [HttpGet(Name = "GetRandomNumber")]
-        public int Get()
+        public async Task<int> Get()
         {
             int randomNumber = Random.Shared.Next(1, 100);
+            
+            // Simulate delay
+            await Task.Delay(1000);
 
             return randomNumber;
         }
