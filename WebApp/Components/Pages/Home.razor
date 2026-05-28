@@ -1,0 +1,27 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<PageTitle>Make an API Call</PageTitle>
+
+<h1>API Call</h1>
+
+
+
+<button class="btn btn-primary" @onclick="MakeAPICall">Click me</button>
+<br />
+<p>
+    API Result:
+    <br />
+    @apiResult
+</p>
+
+@code {
+    private int apiResult = 0;
+
+    //Make a call to FrontendAPI, which will call will call two BackendAPIs
+    //and return the sum of two random numbers
+    private void MakeAPICall()
+    {
+
+    }
+}
